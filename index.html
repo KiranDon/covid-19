@@ -137,14 +137,14 @@
 <div class="contact" id="contact">
     <h1 align="center" style="color: cornflowerblue;">Contact us if you have any symptoms or<br>to get information regarding Corona Virus.</h1>
     <div class="contact_form">
-        <form method="POST"  autocomplete="off">
+        <form action="covid_user_data.php" method="POST"  autocomplete="off">
             <div class="feild">
                 <label for="name" >Name</label>
                 <input type="text" name="name" placeholder="Chris Hamsworth" required>
             </div>
             <div class="feild">
                 <label for="phone" >Phone</label>
-                <input type="number" name="phone" placeholder="9109109109" required>
+                <input type="number" name="number" placeholder="9109109109" required>
             </div>
             <div class="feild">
                 <label for="email" >E-mail</label>
@@ -163,8 +163,8 @@
                 <div class="feild">
                     <label for="gender" >Gender</label>
                     <input type="radio" name="gender" value="Male" placeholder="example@domain.com">Male
-                    <input type="radio" name="gender" value="Male" placeholder="example@domain.com">Female
-                    <input type="radio" name="gender" value="Male" placeholder="example@domain.com">Others
+                    <input type="radio" name="gender" value="Female" placeholder="example@domain.com">Female
+                    <input type="radio" name="gender" value="Others" placeholder="example@domain.com">Others
                 </div>
                 <div class="feild">
                     <label for="symptoms" >Any Symptoms?</label>
