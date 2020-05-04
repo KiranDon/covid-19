@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Country wise data</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200&display=swap" rel="stylesheet">
+</head>
+<body onload="fetch()">
+    <h1 style="color: blue; text-align: center;">Covid-19 Country wise data.</h1>
+    <hr style="box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">
+    <div>
+        <table id="table" style="width: 100%;">
+            <tr>
+                <th>S.No</th>
+                <th>Country Name</th>
+                <th>Total Confirmed</th>
+                <th>Total Recovered</th>
+                <th>Total Deceased</th>
+            </tr>
+
+        </table>
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    function fetch()
+    {
+        $.get("https://api.covid19api.com/summary", 
+        function (data)
+        {
+            var table = document.getElementById("table");
+            for(var i=1; i<(data['Countries'].length)+1; i++)
+            {
+                var x = table.insertRow();
+                x.insertCell(0);
+                table.rows[i].cells[0].innerHTML = i;
+
+                x.insertCell(1);
+                table.rows[i].cells[1].innerHTML = data['Countries'][i-1]['Country'];
+                
+                x.insertCell(2);
+                table.rows[i].cells[2].innerHTML = data['Countries'][i-1]['TotalConfirmed'];
+
+                x.insertCell(3);
+                table.rows[i].cells[3].innerHTML = data['Countries'][i-1]['TotalRecovered'];
+
+                x.insertCell(4);
+                table.rows[i].cells[4].innerHTML = data['Countries'][i-1]['TotalDeaths'];
+            }
+        })
+    }
+</script>
+</body>
+</html>

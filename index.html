@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Covid-19 Awareness</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200&display=swap" rel="stylesheet">
+</head>
+<body onload="fetch()">
+    <!--NavBar-->
+<nav class="navbar" id="navbar">
+    <span class="NavTitle">COVID-19</span>
+    <a href="#contact">Contact</a>
+    <a href="#prevention">Prevention</a>
+    <a href="#symptoms">Symptoms</a>
+    <a href="#about">About</a>
+    <a href="#main">Home</a>
+</nav>
+<!--Main Header-->
+<div class="main" id="main">
+    <div class="mainImage">
+        <img src="images/people2.png" class="people" width="350px" height="350px"/>
+    </div>
+    <div class="mainText">
+        <h1>Let's Be-aware and Fight against this <br>Cor <span class="rotate_virus"><img src="images/virus_cropped.png" width="50px" height="50px"/></span> na virus.</h1>
+    </div>
+</div>
+<!--Numbers-->
+<div class="numbers_block" id="numbers_block">
+    <h2 class="numbers_title">Latest Numbers (World wide)</h2>
+    <div class="current_numbers">
+        <div class="total">
+            <h3 id="tc">Loading</h3>
+            <h5>Total Confirmed cases</h5>
+        </div>
+        <div class="active">
+            <h3 id="ca">Loading</h3>
+            <h5>Current active cases</h5>
+        </div>
+        <div class="recovered">
+            <h3 id="tr">Loading</h3>
+            <h5>Total patients recovered</h5>
+        </div>
+        <div class="deaths">
+            <h3 id="td">Loading</h3>
+            <h5>Total deceased</h5>
+        </div>
+    </div>
+    <a href="state.html" target="_blank"><h3>Click here to see State wise data</h3></a>
+    <a href="country.html" target="_blank"><h3>Click here to see country wise data</h3></a>
+    
+</div>
+
+<!--About-->
+<div class="about_corona" id="about">
+    <h1 style="color:chocolate">About COVID-19.</h1>
+    <div class="aboutrow">
+        <div class="aboutImage">
+            <img src="images/about_corona.jpg" width="500px" height="400px"/>
+        </div>
+        <div class="aboutText">
+            <h2>What is Corona virus?</h2>
+            <p>The coronavirus is a family of viruses that can cause a range of illnesses in humans including common cold and more severe forms like SARS and MERS which are life-threatening. The virus is named after its shape which takes the form of a crown with protrusions around it and hence is known as coronavirus.</p>
+        </div>
+    </div>
+</div>
+<!--Symptoms-->
+<h1 align="center" id="symptoms" style="color: cornflowerblue;">Corona Virus Symptoms</h1>
+<div class="symptoms_gallery">
+    <div class="symptom_image">
+        <img src="images/cough.png" width="200px" height="200px"/>
+        <p>Cough</p>
+    </div>
+    <div class="symptom_image">
+        <img src="images/cold.png" width="200px" height="200px"/>
+        <p>Cold</p>
+    </div>
+    <div class="symptom_image">
+        <img src="images/fever.png" width="200px" height="200px"/>
+        <p>Fever</p>
+    </div>
+    <div class="symptom_image">
+        <img src="images/sour_throat.png" width="200px" height="200px"/>
+        <p>Sour Throat</p>
+    </div>
+    <div class="symptom_image">
+        <img src="images/difficulty_in_breathing.png" width="200px" height="250px"/>
+        <p>Difficult breathing</p>
+    </div>
+    <div class="symptom_image">
+        <img src="images/tired.png" width="200px" height="200px"/>
+        <p>Tiredness</p>
+    </div>
+</div>
+<!--Prevention-->
+<div>
+
+<div class="section" id="prevention">
+    <h1 align="center" style="color:cornflowerblue;">Steps to prevent the spread of virus.</h1>
+    <div class="prevention">
+        <div class="prevention_block">
+            <img src="images/handwash.png" width="150px" height="150px" />
+            <div>
+            <p>Wash your hands toroughly for atleast 20 seconds frequently.</p>
+            </div>
+        </div>
+        <div class="prevention_block">
+            <img src="images/sd.png" width="150px" height="150px" />
+            <div>
+            <p>Maintain Social distancing.(Atleast 1 Meter)</p>
+            </div>
+        </div>
+        <div class="prevention_block">
+            <img src="images/mask.png" width="150px" height="150px" />
+            <div>
+            <p>Always wear a mask as the main source of spreading is by air.</p>
+            </div>
+        </div>
+        <div class="prevention_block">
+            <img src="images/stay.png" width="150px" height="150px" />
+            <div>
+            <p>Stay Home, Stay Safe. Dont go outside un-necessarily.</p>
+            </div>
+        </div>
+        <div class="prevention_block">
+            <img src="images/tv.png" width="150px" height="150px" />
+            <div>
+            <p>Stay informed about the pandemic by following official sources.</p>
+            </div>
+        </div>
+        <div class="prevention_block">
+            <img src="images/hospital.png" width="150px" height="150px" />
+            <div>
+            <p>Seek medical consultation if you have any of these symptoms.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Contact-->
+<div class="contact" id="contact">
+    <h1 align="center" style="color: cornflowerblue;">Contact us if you have any symptoms or<br>to get information regarding Corona Virus.</h1>
+    <div class="contact_form">
+        <form action="covid_user_data.php" method="POST"  autocomplete="off">
+            <div class="feild">
+                <label for="name" >Name</label>
+                <input type="text" name="name" placeholder="Chris Hemsworth" required>
+            </div>
+            <div class="feild">
+                <label for="phone" >Phone</label>
+                <input type="number" name="number" placeholder="9109109109" required>
+            </div>
+            <div class="feild">
+                <label for="email" >E-mail</label>
+                <input type="email" name="email" placeholder="example@domain.com" required>
+            </div>
+            <div class="feild">
+                <label for="age" >Age Group</label>
+                <select name="age">
+                    <option>Select your age group</option>
+                    <option value="0-15">0-15</option>
+                    <option value="16-25">16-25</option>
+                    <option value="25-36">25-35</option>
+                    <option value="35-50">35-50</option>
+                    <option value="above 50">above 50</option>
+                </select>
+                <div class="feild">
+                    <label for="gender" >Gender</label>
+                    <input type="radio" name="gender" value="Male" placeholder="example@domain.com">Male
+                    <input type="radio" name="gender" value="Female" placeholder="example@domain.com">Female
+                    <input type="radio" name="gender" value="Others" placeholder="example@domain.com">Others
+                </div>
+                <div class="feild">
+                    <label for="symptoms" >Any Symptoms?</label>
+                    <textarea name="symptoms" rows="6" placeholder="Mention your symptoms here..."></textarea>
+                </div>
+                <div class="buttons">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--Top Link-->
+<div class="top">
+    <a href="#navbar"><button value="TOP" id="top">TOP</button></a>
+</div>
+<!--Footer-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    function fetch()
+    {
+        $.get("https://api.covid19api.com/summary", 
+        function(data)
+        {
+            //console.log(data['Countries'].length);
+            document.getElementById("tc").innerHTML = data['Global']['TotalConfirmed'];
+            document.getElementById("ca").innerHTML = data['Global']['TotalConfirmed']-data['Global']['TotalRecovered'];
+            document.getElementById("tr").innerHTML = data['Global']['TotalRecovered'];
+            document.getElementById("td").innerHTML = data['Global']['TotalDeaths'];
+        })
+    }
+    
+</script>
+</body>
+</html>

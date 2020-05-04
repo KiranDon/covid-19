@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>State wise data</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200&display=swap" rel="stylesheet">
+</head>
+<body onload="fetch()">
+    <h1 style="color: blue; text-align: center;">Covid-19 State wise data.</h1>
+    <hr style="box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">
+    <div>
+        <table id="table" style="width: 100%;">
+            <tr>
+                <th>S.No</th>
+                <th>State Name</th>
+                <th>Total Confirmed</th>
+                <th>Total Recovered</th>
+                <th>Total Deceased</th>
+            </tr>
+        </table>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    function fetch()
+    {
+        $.get("https://api.covid19india.org/data.json",
+        function (data)
+        {
+            console.log(data['statewise'].length);
+            var table = document.getElementById("table");
+            for(var i=1; i<(data['statewise'].length); i++)
+            {
+                var x = table.insertRow();
+
+                x.insertCell(0);
+                table.rows[i].cells[0].innerHTML = i;
+
+                x.insertCell(1);
+                table.rows[i].cells[1].innerHTML = data['statewise'][i]['state'];
+
+                x.insertCell(2);
+                table.rows[i].cells[2].innerHTML = data['statewise'][i]['confirmed'];
+
+                x.insertCell(3);
+                table.rows[i].cells[3].innerHTML = data['statewise'][i]['recovered'];
+
+                x.insertCell(4);
+                table.rows[i].cells[4].innerHTML = data['statewise'][i]['deaths'];
+            }
+        })
+    }
+</script>
+</body>
+</html>
