@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="fetch()">
     <!--NavBar-->
 <nav class="navbar" id="navbar">
     <span class="NavTitle">COVID-19</span>
@@ -30,22 +30,25 @@
     <h2 class="numbers_title">Latest Numbers (World wide)</h2>
     <div class="current_numbers">
         <div class="total">
-            <h3>2,178,149</h3>
+            <h3 id="tc">Loading</h3>
             <h5>Total Confirmed cases</h5>
         </div>
         <div class="active">
-            <h3>123455</h3>
+            <h3 id="ca">Loading</h3>
             <h5>Current active cases</h5>
         </div>
         <div class="recovered">
-            <h3>546,743</h3>
+            <h3 id="tr">Loading</h3>
             <h5>Total patients recovered</h5>
         </div>
         <div class="deaths">
-            <h3>145,329</h3>
+            <h3 id="td">Loading</h3>
             <h5>Total deceased</h5>
         </div>
     </div>
+    <a href="state.html" target="_blank"><h3>Click here to see State wise data</h3></a>
+    <a href="country.html" target="_blank"><h3>Click here to see country wise data</h3></a>
+    
 </div>
 
 <!--About-->
@@ -140,7 +143,7 @@
         <form action="covid_user_data.php" method="POST"  autocomplete="off">
             <div class="feild">
                 <label for="name" >Name</label>
-                <input type="text" name="name" placeholder="Chris Hamsworth" required>
+                <input type="text" name="name" placeholder="Chris Hemsworth" required>
             </div>
             <div class="feild">
                 <label for="phone" >Phone</label>
@@ -180,8 +183,25 @@
 </div>
 <!--Top Link-->
 <div class="top">
-    <a href="#main"><button value="TOP">TOP</button></a>
+    <a href="#navbar"><button value="TOP" id="top">TOP</button></a>
 </div>
 <!--Footer-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    function fetch()
+    {
+        $.get("https://api.covid19api.com/summary", 
+        function(data)
+        {
+            //console.log(data['Countries'].length);
+            document.getElementById("tc").innerHTML = data['Global']['TotalConfirmed'];
+            document.getElementById("ca").innerHTML = data['Global']['TotalConfirmed']-data['Global']['TotalRecovered'];
+            document.getElementById("tr").innerHTML = data['Global']['TotalRecovered'];
+            document.getElementById("td").innerHTML = data['Global']['TotalDeaths'];
+        })
+    }
+    
+</script>
 </body>
 </html>
