@@ -1,0 +1,313 @@
+html
+{
+    scroll-behavior: smooth;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Muli', sans-serif;
+    
+    overflow-x: hidden;
+}
+.navbar
+{
+    width: 100%;
+    height: autopx;
+    background-color: #a29bfe;
+}
+.NavTitle
+{
+    font-size: 30px;
+    font-weight: 900;
+    margin-left: 5%;
+}
+.navbar a
+{
+    text-decoration: none;
+    float: right;
+    color: #ffffff;
+    margin: 5px 2px 5px 0px;
+    padding: 5px;
+    font-weight: 700;
+    border-radius: 3px;
+    transition: border-bottom 0.5s;
+    transition-timing-function: linear;
+}
+.navbar a:hover
+{
+    border-bottom: 2px solid white;
+
+}
+.main
+{
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-gap: 50px;
+}
+.main .mainImage
+{
+    width: 100%;
+    height: 100%;
+    
+   
+}
+.mainText
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.mainText h1
+{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.rotate_virus img
+{
+    animation: rotate 3s linear 0s infinite;
+}
+@keyframes rotate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+.mainImage img
+{
+    animation: zoom 4s linear infinite;
+}
+@keyframes zoom
+{
+    0%
+    {
+        transform: scale(0.75);
+    }
+    25%
+    {
+        transform: scale(1);
+    }
+    50%
+    {
+        transform: scale(0.75);
+    }
+    75%
+    {
+        transform: scale(1);
+    }
+    100%
+    {
+        transform: scale(0.75);
+    }
+}
+.numbers_block
+{
+    text-align: center;
+    width: 100%;
+}
+.numbers_block h2
+{
+    color: red;
+}
+.current_numbers
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.about_corona
+{
+    background-color: #fdfafd;
+    text-align: center;
+    margin-top: 50px;
+    padding: 50px;
+    
+}
+.aboutrow
+{
+    margin: 60px 40px 60px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.aboutText p
+{
+    font-size: 20px;
+    font-weight: 900;
+}
+.symptoms_gallery
+{
+    width: 80%;
+    position: relative;
+    left: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+.symptoms_gallery .symptom_image
+{
+    width: 300px;
+    height: auto;
+    margin: auto;
+    transition: transform 1s linear;
+    
+}
+.symptoms_gallery .symptom_image:hover
+{
+    transform: scale(1.1);
+}
+.section
+{
+    background-color: #fbfafb;
+    margin-top: 100px;
+}
+.prevention
+{
+    margin-top: 50px;
+    width: 80%;
+    height: auto;
+    position: relative;
+    left: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    overflow: hidden;
+}
+.prevention_block
+{
+    display: flex;
+    width: 300px;
+    margin: 30px auto 50px auto;
+    border: 1px solid burlywood ;
+}
+
+.contact_form
+{
+    width: 60%;
+    height: auto;
+    position: relative;
+    left: 20%;
+}
+input[type=text], input[type=number], input[type=email], select
+{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-bottom: 1px solid coral;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+input[type=submit], input[type=reset]
+{
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type]:focus
+{
+    border: 1px solid #64ee42;
+}
+.feild
+{
+    margin: 10px;
+}
+textarea
+{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+}
+.buttons
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.top
+{
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+}
+button
+{
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+table
+{
+    border-collapse: separate;
+    border-spacing: 5px 5px;
+}
+th
+{
+    background-color: wheat;
+    border-radius: 5px;
+}
+td
+{
+    background-color: rgba(108,117,125,.12549);
+    border-radius: 5px;
+}
+td:hover
+{
+    background-color:  rgba(108,117,125, 0.5);
+}
+tr:nth-child(even){
+
+    background-color: white;
+}
+@media screen and (max-width: 600px)
+{
+    .navbar
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .current_numbers
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .aboutrow
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .aboutImage img
+    {
+        width: 100%;
+    }
+}
